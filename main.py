@@ -1,5 +1,5 @@
 from time import sleep
-import re
+from re import search
 import qbittorrentapi
 
 def isBadClient(client):
@@ -10,7 +10,7 @@ def isBadClient(client):
     ]
 
     for regex in regex_list:
-        if re.search(regex, client):
+        if search(regex, client):
             return True
 
     return False
@@ -28,8 +28,8 @@ try:
 except qbittorrentapi.LoginFailed as e:
     print(e)
 
-print(f'# qBittorrent: {qb_client.app.version}')
-print(f'# qBittorrent Web API: {qb_client.app.web_api_version}')
+print(f"# qBittorrent: {qb_client.app.version}")
+print(f"# qBittorrent Web API: {qb_client.app.web_api_version}")
 
 while True:
     for torrent in qb_client.torrents_info():
@@ -41,5 +41,5 @@ while True:
               and peer.uploaded > peer.downloaded
             ):
                 qb_client.transfer_ban_peers(k)
-                print(u">> ban: {} \"{}\"".format(k, peer.client))
+                print(f">> ban: {k} \"{peer.client}\"")
     sleep(5)
