@@ -31,6 +31,9 @@ except qbittorrentapi.LoginFailed as e:
 print(f"# qBittorrent: {qb_client.app.version}")
 print(f"# qBittorrent Web API: {qb_client.app.web_api_version}")
 
+# 清空旧的 IP 封禁列表
+qb_client.app_set_preferences({ "banned_IPs": "" })
+
 while True:
     for torrent in qb_client.torrents_info():
         peers_info = qb_client.sync_torrent_peers(torrent_hash=torrent.hash)
