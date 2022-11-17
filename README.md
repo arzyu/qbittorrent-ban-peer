@@ -1,4 +1,4 @@
-# qBittorrent-ban-peer
+# qbittorrent-ban-peer
 
 为 qBittorrent 屏蔽吸血客户端
 
