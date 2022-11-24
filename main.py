@@ -36,7 +36,11 @@ qb_client.app_set_preferences({ "banned_IPs": "" })
 
 while True:
     for torrent in qb_client.torrents_info():
-        peers_info = qb_client.sync_torrent_peers(torrent_hash=torrent.hash)
+        try:
+            peers_info = qb_client.sync_torrent_peers(torrent_hash=torrent.hash)
+        except:
+            break
+
         for k, peer in peers_info.peers.items():
             if (
               isBadClient(peer.client)
