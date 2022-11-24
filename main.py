@@ -45,4 +45,5 @@ while True:
             ):
                 qb_client.transfer_ban_peers(k)
                 print(f">> ban: {k} \"{peer.client}\"")
+
     sleep(5)
