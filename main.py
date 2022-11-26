@@ -4,7 +4,7 @@ import qbittorrentapi
 
 def isBadClient(client):
     regex_list = [
-        r"^-XL0012",
+        r"^-XL00",
         r"^Xunlei",
         r"^7\."
     ]
