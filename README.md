@@ -1,10 +1,12 @@
+
+
 # qbittorrent-ban-peer
 
 为 qBittorrent 屏蔽吸血客户端
 
 ## 运行
 
-* 运行前必须在 qBittorrent 的设置中启用 Web UI 功能，用户及密码需要和 `main.py` 中保持一致
+* 运行前必须在 qBittorrent 的设置中启用 Web UI 功能，默认账号密码为 `admin` / `password`，如需修改请同步更改 `main.py` 中的配置
 * 本项目使用 `pipenv` 管理依赖，请确保已安装 `pipenv`
 
 ```shell
